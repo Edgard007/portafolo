@@ -5,18 +5,18 @@
 import styled from "styled-components";
 
 //* ==> Assets <== *//
-import iconWhatsApp from "../assets/whatsapp.svg";
+import iconLinkedin from "../assets/linkedin.svg";
 
 const FloatingIcon = () => {
   return (
     <Wrapper>
       <a
-        href="#"
+        href="https://www.linkedin.com/in/edgard007/"
         target="_blank"
         rel="noopener noreferrer"
         className="floatingIcon"
       >
-        <img src={iconWhatsApp} alt="whatsappIcon" />
+        <img src={iconLinkedin} alt="floatingIcon" />
       </a>
     </Wrapper>
   );
@@ -42,14 +42,14 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #4bca5a;
+    background-color: #0077b7;
     opacity: 0.9;
     animation: onda 1s infinite ease;
   }
 
   @keyframes onda {
     to {
-      transform: scale(1.5);
+      transform: scale(2);
       opacity: 0;
     }
   }
@@ -57,8 +57,8 @@ const Wrapper = styled.div`
   .floatingIcon img {
     position: relative;
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
 `;
 
