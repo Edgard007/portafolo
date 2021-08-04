@@ -9,10 +9,13 @@ import {
 } from "@ant-design/icons";
 import styled from "styled-components";
 
+//* ==> Components <== *//
+import FloatingIcon from "./Components/floatingIcon";
+
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-class SiderDemo extends React.Component {
+class App extends React.Component {
   state = {
     collapsed: false,
   };
@@ -26,6 +29,7 @@ class SiderDemo extends React.Component {
     return (
       <Wrapper>
         <Layout style={{ minHeight: "100vh" }}>
+          <FloatingIcon />
           <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
             <div className="logo" />
             <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
@@ -81,4 +85,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default SiderDemo;
+export default App;
