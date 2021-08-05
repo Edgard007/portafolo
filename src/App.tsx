@@ -1,19 +1,12 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { Layout, Breadcrumb } from "antd";
 import styled from "styled-components";
 
 //* ==> Components <== *//
 import FloatingIcon from "./Components/floatingIcon";
+import Menu from "./Layout/Menu";
 
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+const { Content, Footer } = Layout;
 
 class App extends React.Component {
   state = {
@@ -25,37 +18,13 @@ class App extends React.Component {
   };
 
   render() {
-    const { collapsed } = this.state;
     return (
       <Wrapper>
         <Layout style={{ minHeight: "100vh" }}>
           <FloatingIcon />
-          <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-            <div className="logo" />
-            <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-              <Menu.Item key="1" icon={<PieChartOutlined />}>
-                Option 1
-              </Menu.Item>
-              <Menu.Item key="2" icon={<DesktopOutlined />}>
-                Option 2
-              </Menu.Item>
-              <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-                <Menu.Item key="3">Tom</Menu.Item>
-                <Menu.Item key="4">Bill</Menu.Item>
-                <Menu.Item key="5">Alex</Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-                <Menu.Item key="6">Team 1</Menu.Item>
-                <Menu.Item key="8">Team 2</Menu.Item>
-              </SubMenu>
-              <Menu.Item key="9" icon={<FileOutlined />}>
-                Files
-              </Menu.Item>
-            </Menu>
-          </Sider>
           <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }} />
-            <Content style={{ margin: "0 16px" }}>
+            <Menu />
+            <Content style={{ margin: "0 25px" }}>
               <Breadcrumb style={{ margin: "16px 0" }}>
                 <Breadcrumb.Item>User</Breadcrumb.Item>
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
@@ -68,7 +37,7 @@ class App extends React.Component {
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
-              Ant Design ©2018 Created by Ant UED
+              Francisco Edgardo Hernández Palacios ©2021
             </Footer>
           </Layout>
         </Layout>
