@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   padding: 0 50px;
   top: 0;
   width: 100%;
-  height: 4rem;
+  height: ${(props) => props.theme?.heightMenu};
   background-color: #ffff;
   box-shadow: 0 2px 5px rgb(0 48 136 / 20%);
   display: flex;

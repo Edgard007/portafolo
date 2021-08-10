@@ -1,50 +1,34 @@
-import React from "react";
-import { Layout, Breadcrumb } from "antd";
+// Essential imports
+import { Layout } from "antd";
 import styled from "styled-components";
 
 //* ==> Components <== *//
 import FloatingIcon from "./Components/floatingIcon";
 import Menu from "./Layout/Menu";
 
+//* ==> Pages <== *//
+import Home from "./Pages/Home/index";
+
 const { Content, Footer } = Layout;
 
-class App extends React.Component {
-  state = {
-    collapsed: false,
-  };
-
-  onCollapse = (collapsed: any) => {
-    this.setState({ collapsed });
-  };
-
-  render() {
-    return (
-      <Wrapper>
-        <Layout style={{ minHeight: "100vh" }}>
-          <FloatingIcon />
-          <Layout className="site-layout">
-            <Menu />
-            <Content style={{ margin: "0 25px" }}>
-              <Breadcrumb style={{ margin: "16px 0" }}>
-                <Breadcrumb.Item>User</Breadcrumb.Item>
-                <Breadcrumb.Item>Bill</Breadcrumb.Item>
-              </Breadcrumb>
-              <div
-                className="site-layout-background"
-                style={{ padding: 24, minHeight: 360 }}
-              >
-                Bill is a cat.
-              </div>
-            </Content>
-            <Footer style={{ textAlign: "center" }}>
-              Francisco Edgardo Hernández Palacios ©2021
-            </Footer>
-          </Layout>
+const App = () => {
+  return (
+    <Wrapper>
+      <Layout style={{ minHeight: "100vh" }}>
+        <FloatingIcon />
+        <Layout className="site-layout">
+          <Menu />
+          <Content style={{ margin: "0 25px" }}>
+            <Home />
+          </Content>
+          <Footer style={{ textAlign: "center", height: "4rem" }}>
+            Francisco Edgardo Hernández Palacios ©2021
+          </Footer>
         </Layout>
-      </Wrapper>
-    );
-  }
-}
+      </Layout>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   .logo {
