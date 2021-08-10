@@ -10,10 +10,10 @@ const CustomMenu = () => {
       <nav className="header__nav">
         <ul className="menu">
           {data &&
-            data.map((i) => (
-              <li className="menu__item">
-                <a className="menu__link" href={i?.path}>
-                  {i?.namePath}
+            data.map((el, i) => (
+              <li className="menu__item" key={i + 1}>
+                <a className="menu__link" href={el?.path}>
+                  {el?.namePath}
                 </a>
               </li>
             ))}
@@ -25,7 +25,7 @@ const CustomMenu = () => {
 
 const Wrapper = styled.div`
   position: relative;
-  padding: 0 25px;
+  padding: 0 50px;
   top: 0;
   width: 100%;
   height: 4rem;
@@ -41,10 +41,13 @@ const Wrapper = styled.div`
   }
 
   .header__nav {
-    width: 60%;
+    width: 45%;
   }
 
   .menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     list-style: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -54,7 +57,6 @@ const Wrapper = styled.div`
 
   .menu__item {
     position: relative;
-    padding: 10px;
   }
 
   .menu__link {

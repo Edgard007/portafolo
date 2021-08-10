@@ -4,7 +4,15 @@ import { IMenu } from "../Models/iMenu";
 export const data: IMenu[] = [
   {
     path: "/home",
-    namePath: "Inicio",
+    namePath: "Home",
+  },
+  {
+    path: "/about",
+    namePath: "About me",
+  },
+  {
+    path: "/portfolio",
+    namePath: "Portfolio",
   },
   {
     path: "/contact",

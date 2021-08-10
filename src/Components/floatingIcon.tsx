@@ -5,7 +5,7 @@
 import styled from "styled-components";
 
 //* ==> Assets <== *//
-import iconLinkedin from "../assets/linkedin.svg";
+import iconLinkedin from "../Assets/linkedin.svg";
 
 const FloatingIcon = () => {
   return (
