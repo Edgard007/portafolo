@@ -8,8 +8,9 @@ import Menu from "./Layout/Menu";
 
 //* ==> Pages <== *//
 import Home from "./Pages/Home/index";
+import AboutMe from "./Pages/AboutMe/index";
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 const App = () => {
   return (
@@ -20,10 +21,8 @@ const App = () => {
           <Menu />
           <Content style={{ margin: "0 25px" }}>
             <Home />
+            <AboutMe />
           </Content>
-          <Footer style={{ textAlign: "center", height: "4rem" }}>
-            Francisco Edgardo Hernández Palacios ©2021
-          </Footer>
         </Layout>
       </Layout>
     </Wrapper>

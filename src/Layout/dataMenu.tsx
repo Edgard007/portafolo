@@ -3,11 +3,11 @@ import { IMenu } from "../Models/iMenu";
 
 export const data: IMenu[] = [
   {
-    path: "/home",
+    path: "#homeContain",
     namePath: "Home",
   },
   {
-    path: "/about",
+    path: "#aboutContain",
     namePath: "About me",
   },
   {

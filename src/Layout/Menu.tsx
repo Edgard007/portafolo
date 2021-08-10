@@ -24,8 +24,9 @@ const CustomMenu = () => {
 };
 
 const Wrapper = styled.div`
-  position: relative;
+  position: fixed;
   padding: 0 50px;
+  z-index: 10;
   top: 0;
   width: 100%;
   height: ${(props) => props.theme?.heightMenu};
