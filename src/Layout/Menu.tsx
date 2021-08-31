@@ -18,6 +18,11 @@ const CustomMenu = () => {
               </li>
             ))}
         </ul>
+        <div className="hamburguer-menu">
+          <span className="ham__item"></span>
+          <span className="ham__item"></span>
+          <span className="ham__item"></span>
+        </div>
       </nav>
     </Wrapper>
   );
@@ -25,9 +30,9 @@ const CustomMenu = () => {
 
 const Wrapper = styled.div`
   position: fixed;
-  padding: 0 50px;
-  z-index: 10;
   top: 0;
+  z-index: 2;
+  padding: 0 50px;
   width: 100%;
   height: ${(props) => props.theme?.heightMenu};
   background-color: #ffff;
@@ -42,7 +47,13 @@ const Wrapper = styled.div`
   }
 
   .header__nav {
-    width: 45%;
+    width: 60%;
+
+    @media (max-width: 740px) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
   }
 
   .menu {
@@ -54,6 +65,10 @@ const Wrapper = styled.div`
     margin-bottom: 0;
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 740px) {
+      display: none;
+    }
   }
 
   .menu__item {
@@ -62,7 +77,7 @@ const Wrapper = styled.div`
 
   .menu__link {
     position: relative;
-    color: #0052ff;
+    color: ${(props) => props.theme?.primaryColor};
     font-size: 15px;
     padding: 5px;
 
@@ -73,12 +88,40 @@ const Wrapper = styled.div`
       left: 0;
       width: 0;
       height: 4px;
-      background-color: #0052ff;
+      background-color: ${(props) => props.theme?.primaryColor};
       transition: all 0.3s;
     }
 
     &:hover::before {
       width: 100%;
+    }
+  }
+
+  .hamburguer-menu {
+    display: none;
+
+    @media (max-width: 740px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      cursor: pointer;
+      width: 3rem;
+      height: 2rem;
+    }
+  }
+
+  .ham__item {
+    display: block;
+    height: 6px;
+    width: 2.4rem;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    background-color: ${(props) => props.theme?.primaryColor};
+    transition: all 0.4s;
+
+    &:nth-child(3) {
+      margin-bottom: 0;
     }
   }
 `;
