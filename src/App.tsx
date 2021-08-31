@@ -15,25 +15,30 @@ const { Content } = Layout;
 const App = () => {
   return (
     <Wrapper>
-      <Layout style={{ minHeight: "100vh" }}>
-        <FloatingIcon />
-        <Layout className="site-layout">
-          <Menu />
-          <Content style={{ margin: "0 25px" }}>
-            <Home />
-            <AboutMe />
-          </Content>
-        </Layout>
-      </Layout>
+      <FloatingIcon />
+      <Menu />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  .logo {
-    height: 32px;
-    margin: 16px;
-    background: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 100vh;
+
+  html::-webkit-scrollbar {
+    background-color: #eeeeee;
+    width: 0.8rem;
+  }
+
+  html::-webkit-scrollbar-corner {
+    background-color: #eeeeee;
+  }
+  html::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme?.textColor};
+    border-radius: 5px;
+  }
+  html::-webkit-scrollbar-thumb:hover {
+    background-color: #8c98a5;
   }
 `;
 
