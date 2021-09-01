@@ -25,19 +25,20 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
 
-  html::-webkit-scrollbar {
-    background-color: #eeeeee;
-    width: 0.8rem;
+  ::-webkit-scrollbar {
+    width: 0.5rem;
   }
 
-  html::-webkit-scrollbar-corner {
-    background-color: #eeeeee;
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
   }
-  html::-webkit-scrollbar-thumb {
+
+  ::-webkit-scrollbar-thumb {
     background-color: ${(props) => props.theme?.textColor};
     border-radius: 5px;
   }
-  html::-webkit-scrollbar-thumb:hover {
+
+  ::-webkit-scrollbar-thumb:hover {
     background-color: #8c98a5;
   }
 `;
