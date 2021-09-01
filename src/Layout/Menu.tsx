@@ -1,9 +1,17 @@
+import { useState } from "react";
+
 import styled from "styled-components";
 
 //* ==> Data <== *//
 import { data } from "./dataMenu";
 
+//* ==> Components <== *//
+import ContentMenu from "./ContentMenu";
+
 const CustomMenu = () => {
+  //* ==> STATES <== *//
+  const [clickMenu, setClickMenu] = useState(false);
+
   return (
     <Wrapper>
       <span className="nameApp">エドガード</span>
@@ -18,11 +26,27 @@ const CustomMenu = () => {
               </li>
             ))}
         </ul>
-        <div className="hamburguer-menu">
-          <span className="ham__item"></span>
-          <span className="ham__item"></span>
-          <span className="ham__item"></span>
+        <div
+          className="hamburguer-menu"
+          onClick={() => setClickMenu((prev) => !prev)}
+        >
+          <span
+            className={
+              !clickMenu ? "ham__item" : "ham__item open_ham iHam_active"
+            }
+          ></span>
+          <span
+            className={
+              !clickMenu ? "ham__item" : "ham__item open_ham iHam_active"
+            }
+          ></span>
+          <span
+            className={
+              !clickMenu ? "ham__item" : "ham__item open_ham iHam_active"
+            }
+          ></span>
         </div>
+        {clickMenu && <ContentMenu />}
       </nav>
     </Wrapper>
   );
@@ -48,7 +72,6 @@ const Wrapper = styled.div`
 
   .header__nav {
     width: 60%;
-
     @media (max-width: 740px) {
       display: flex;
       justify-content: flex-end;
@@ -108,6 +131,7 @@ const Wrapper = styled.div`
       cursor: pointer;
       width: 3rem;
       height: 2rem;
+      z-index: 10;
     }
   }
 
@@ -123,6 +147,24 @@ const Wrapper = styled.div`
     &:nth-child(3) {
       margin-bottom: 0;
     }
+  }
+
+  .open_ham {
+    background-color: #ffffff;
+  }
+
+  .iHam_active:nth-child(1) {
+    transform-origin: left;
+    transform: rotate(42deg);
+    width: 2.5rem;
+  }
+  .iHam_active:nth-child(2) {
+    opacity: 0;
+  }
+  .iHam_active:nth-child(3) {
+    transform-origin: left;
+    transform: rotate(-42deg);
+    width: 2.5rem;
   }
 `;
 
