@@ -65,6 +65,10 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 740px) {
+    padding: 0 15px;
+  }
+
   .nameApp {
     font-size: 20px;
     font-weight: bold;
@@ -132,6 +136,16 @@ const Wrapper = styled.div`
       width: 3rem;
       height: 2rem;
       z-index: 10;
+      position: absolute;
+      right: 10px;
+    }
+
+    @media (max-width: 430px) {
+      right: 5px;
+    }
+
+    @media (max-width: 400px) {
+      right: 0px;
     }
   }
 
